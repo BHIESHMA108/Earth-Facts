@@ -1,90 +1,109 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Planet Earth Facts</title>
+  <title>Fun Facts About Me</title>
   <style>
+    * {
+      box-sizing: border-box;
+    }
+
     body {
-      font-family: 'Arial', sans-serif;
+      font-family: 'Poppins', sans-serif;
       display: flex;
       justify-content: center;
       align-items: center;
-      height: 100vh;
+      min-height: 100vh;
+      background-color: #f0f0f0;
       margin: 0;
-      background-color: #e0f7fa;
-      color: #333;
     }
 
     .container {
-      text-align: center;
-      max-width: 600px;
-      margin: 0 auto;
-      background: #ffffff;
-      padding: 20px;
+      background-color: #fff;
+      padding: 50px;
       border-radius: 10px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+      max-width: 600px;
+      width: 100%;
+    }
+
+    .content {
+      width: 100%;
     }
 
     h1 {
-      font-size: 2rem;
-      margin-bottom: 1rem;
-      color: #00796b;
+      margin-bottom: 30px;
+      color: #333;
     }
 
-    .fact-card {
-      margin: 20px 0;
+    #fact-display {
+      font-size: 20px;
+      margin-bottom: 40px;
       padding: 20px;
-      background: #b2dfdb;
-      border-radius: 10px;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      border: none;
+      border-radius: 8px;
+      background-color: #f9f9f9;
+      min-height: 60px;
+      line-height: 1.6;
+      word-break: break-word;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    #fact-display:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
     }
 
     button {
-      padding: 10px 20px;
-      background-color: #00796b;
+      padding: 15px 30px;
+      font-size: 18px;
+      background-color: #007bff;
       color: white;
       border: none;
-      border-radius: 5px;
+      border-radius: 8px;
       cursor: pointer;
-      font-size: 1rem;
       transition: background-color 0.3s ease;
     }
 
     button:hover {
-      background-color: #004d40;
+      background-color: #0056b3;
     }
   </style>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght=400;700&display=swap" rel="stylesheet"> 
 </head>
 <body>
   <div class="container">
-    <h1>Planet Earth Facts</h1>
-    <div id="fact-card" class="fact-card">
-      <p id="fact-text">Click the button below to see a fun fact about Earth!</p>
+    <div class="content">
+        <h1>Fun Facts About Me</h1>
+        <div id="fact-display">Click the button to see a fun fact!</div>
+        <button id="generate-fact">Generate Fact</button>
     </div>
-    <button id="generate-btn">Generate Fun Fact</button>
   </div>
   <script>
-    const facts = [
-      "Earth is the only planet known to support life.",
-      "70% of Earth’s surface is covered with water.",
-      "The Earth’s core is as hot as the surface of the sun.",
-      "Earth’s atmosphere protects us from meteoroids and harmful radiation.",
-      "A year on Earth is not exactly 365 days; it's 365.25 days.",
-      "Earth is the densest planet in the Solar System.",
-      "Mount Everest is the highest point on Earth, but Mauna Kea is taller from base to summit.",
-      "The Amazon rainforest produces 20% of the world’s oxygen.",
-      "Earth has one moon, and its gravitational pull causes tides.",
-      "Antarctica holds about 60% of the world’s fresh water."
+    const factDisplay = document.getElementById('fact-display');
+    const generateFactButton = document.getElementById('generate-fact');
+
+    const funFacts = [
+      {
+        "fact": "Earth isn't perfectly round:",
+        "details": "It's actually slightly flattened at the poles and bulging at the equator due to the centrifugal force created as it rotates."
+      },
+      {
+        "fact": "We're speeding through space:",
+        "details": "Earth orbits the sun at an average speed of 67,000 miles per hour!"
+      },
+      // ... add more fun facts
     ];
 
-    function generateFact() {
-      const randomIndex = Math.floor(Math.random() * facts.length);
-      const factText = document.getElementById("fact-text");
-      factText.textContent = facts[randomIndex];
+    function getRandomFact() {
+      const randomIndex = Math.floor(Math.random() * funFacts.length);
+      return funFacts[randomIndex];
     }
 
-    document.getElementById("generate-btn").addEventListener("click", generateFact);
+    generateFactButton.addEventListener('click', () => {
+      const randomFact = getRandomFact();
+      factDisplay.textContent = ${randomFact.fact} ${randomFact.details};
+    });
   </script>
 </body>
 </html>
