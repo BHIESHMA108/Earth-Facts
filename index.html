@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fun Fact Generator</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background-color: #f3f4f6;
+      color: #333;
+    }
+
+    .container {
+      text-align: center;
+      max-width: 600px;
+      margin: 0 auto;
+      background: #ffffff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    h1 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      color: #4a90e2;
+    }
+
+    .fact-card {
+      margin: 20px 0;
+      padding: 20px;
+      background: #e8f0fe;
+      border-radius: 10px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    button {
+      padding: 10px 20px;
+      background-color: #4a90e2;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 1rem;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #357abd;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Fun Fact Generator</h1>
+    <div id="fact-card" class="fact-card">
+      <p id="fact-text">Click the button below to see a fun fact!</p>
+    </div>
+    <button id="generate-btn">Generate Fun Fact</button>
+  </div>
+  <script>
+    const facts = [
+      "I love hiking and have traveled to five national parks.",
+      "I am an avid reader and read around 20 books per year.",
+      "I once baked a 3-tiered cake for a family gathering!",
+      "I speak three languages fluently.",
+      "I’m learning to play the guitar in my free time."
+    ];
+
+    function generateFact() {
+      const randomIndex = Math.floor(Math.random() * facts.length);
+      const factText = document.getElementById("fact-text");
+      factText.textContent = facts[randomIndex];
+    }
+
+    document.getElementById("generate-btn").addEventListener("click", generateFact);
+  </script>
+</body>
+</html>
