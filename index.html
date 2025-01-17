@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Fun Fact Generator</title>
+  <title>Planet Earth Facts</title>
   <style>
     body {
       font-family: 'Arial', sans-serif;
@@ -12,7 +12,7 @@
       align-items: center;
       height: 100vh;
       margin: 0;
-      background-color: #f3f4f6;
+      background-color: #e0f7fa;
       color: #333;
     }
 
@@ -29,20 +29,20 @@
     h1 {
       font-size: 2rem;
       margin-bottom: 1rem;
-      color: #4a90e2;
+      color: #00796b;
     }
 
     .fact-card {
       margin: 20px 0;
       padding: 20px;
-      background: #e8f0fe;
+      background: #b2dfdb;
       border-radius: 10px;
       box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     }
 
     button {
       padding: 10px 20px;
-      background-color: #4a90e2;
+      background-color: #00796b;
       color: white;
       border: none;
       border-radius: 5px;
@@ -52,25 +52,30 @@
     }
 
     button:hover {
-      background-color: #357abd;
+      background-color: #004d40;
     }
   </style>
 </head>
 <body>
   <div class="container">
-    <h1>Fun Fact Generator</h1>
+    <h1>Planet Earth Facts</h1>
     <div id="fact-card" class="fact-card">
-      <p id="fact-text">Click the button below to see a fun fact!</p>
+      <p id="fact-text">Click the button below to see a fun fact about Earth!</p>
     </div>
     <button id="generate-btn">Generate Fun Fact</button>
   </div>
   <script>
     const facts = [
-      "I love hiking and have traveled to five national parks.",
-      "I am an avid reader and read around 20 books per year.",
-      "I once baked a 3-tiered cake for a family gathering!",
-      "I speak three languages fluently.",
-      "I’m learning to play the guitar in my free time."
+      "Earth is the only planet known to support life.",
+      "70% of Earth’s surface is covered with water.",
+      "The Earth’s core is as hot as the surface of the sun.",
+      "Earth’s atmosphere protects us from meteoroids and harmful radiation.",
+      "A year on Earth is not exactly 365 days; it's 365.25 days.",
+      "Earth is the densest planet in the Solar System.",
+      "Mount Everest is the highest point on Earth, but Mauna Kea is taller from base to summit.",
+      "The Amazon rainforest produces 20% of the world’s oxygen.",
+      "Earth has one moon, and its gravitational pull causes tides.",
+      "Antarctica holds about 60% of the world’s fresh water."
     ];
 
     function generateFact() {
